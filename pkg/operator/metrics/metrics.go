@@ -169,8 +169,6 @@ func (mc *Calculator) getCloudSecret() (*corev1.Secret, error) {
 		secretKey.Name = constants.OvirtCloudCredsSecretName
 	case configv1.VSpherePlatformType:
 		secretKey.Name = constants.VSphereCloudCredSecretName
-	case configv1.KubevirtPlatformType:
-		secretKey.Name = constants.KubevirtCloudCredSecretName
 	default:
 		mc.log.WithField("cloud", platformType).Info("unsupported cloud for determing CCO mode")
 		return nil, nil
@@ -193,8 +191,6 @@ func cloudProviderSpecToMetricsKey(cloud string) string {
 		return "ovirt"
 	case "VsphereProviderSpec":
 		return "vsphere"
-	case "KubevirtProviderSpec":
-		return "kubevirt"
 	default:
 		return "unknown"
 	}

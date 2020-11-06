@@ -5,6 +5,5 @@
       type: string
       enum:
       - ebs.csi.aws.com
-      - cinder.csi.openstack.org
       - manila.csi.openstack.org
       - csi.ovirt.org
